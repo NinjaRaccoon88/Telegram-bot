@@ -1,7 +1,6 @@
 import telebot
 import requests
 import json
-from bs4 import BeautifulSoup
 import random
 from random_word import RandomWords
 r = RandomWords()
@@ -18,8 +17,23 @@ def start_message(message):
 # Команда для випадкового слова та його перекладу
 @bot.message_handler(commands=['word'])
 def send_word(message):
-    words = { 'food': 'їжа',
-            'footbal': 'футбол'
+    words = {   'ability': 'здатність',
+                'abroad': 'за кордоном',
+                'culture': 'культура',
+                'history': 'історія',
+                'science': 'наука',
+                'technology': 'технологія',
+                'religion': 'релігія',
+                'politics': 'політика',
+                'government': 'уряд',
+                'law': 'право',
+                'justice': 'правосуддя',
+                'humanity': 'людство',
+                'equality': 'рівність',
+                'diversity': 'різноманітність',
+                'peace': 'мир',
+                'war': 'війна',
+                'conflict': 'кoнфлiкт'
     }
     word = random.choice(list(words.keys()))
     bot.reply_to(message, f"Слово: {word}\nПереклад: {words[word]}")
